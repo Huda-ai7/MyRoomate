@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Post>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="row mt-5">
+    <div class="row mb-5 justify-content-center">
+        <div class="col-md-6">
+        <h1 class="text-end">ابحث عن شريك السكن المثالي</h1>
+        <p class="text-end fs-4 lead">
+            .تبحث عن شخص لمشاركة مسكنك؟ أنت في المكان الصحيح. منصتنا تربط بين الأشخاص الذين يبحثون عن شركاء سكن، مما يجعل من السهل العثور على شخص يتناسب مع نمط حياتك وتفضيلاتك
+        </p>
+        <p class="text-end fs-4 lead">
+            سواء كنت تبحث عن شريك سكن أو لديك غرفة للعرض، نحن نساعدك في التواصل مع أشخاص متشابهين في التفكير في منطقتك. أنشئ ملفك الشخصي، تصفح الخيارات المتاحة، واعثر على وضع السكن المثالي لك
+        </p>
+        <p class="text-end fs-4 lead">انضم إلى مجتمعنا اليوم واكتشف تجربة شريك السكن القادمة الرائعة؟ <span><a href="/Identity/Account/Login" class="fw-bolder">مستعد للبدء</a></span></p>
+        </div>
+    </div>
+
+        @foreach(var p in Model)
+        {
+            <div class="row my-3 justify-content-center">
+                <div class="card p-0" style="width: 65%;">
+                    <div class="card-body">
+                        <div class="row justify-content-end align-items-center">
+                            <div class="col-md-3">
+                                <a asp-controller="Home" asp-route-targetUserId="@p.UserId" asp-action="StartConversation" class="btn btn-dark w-100">
+                                    توصل مع المستخدم
+                                </a>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col text-end">
+                                        <h4>@p.UserName</h4>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <img
+                                        src="https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=2048x2048&w=is&k=20&c=b_jPJtKaMniqqQD9cN60Ye3WRjfNFnrjtWND3x7k2IQ="
+                                        class="rounded-circle"
+                                        width="50"
+                                        alt=""
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="row">
+                                <p class="fs-4" style="white-space: pre-wrap;">@p.Content</p>
+                            </div>
+                            <div class="row">
+                                @foreach(var img in @p.Images)
+                                {
+                                    <img
+                                    src="@img.ImagePath"
+                                    width="100"
+                                    />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+</div>

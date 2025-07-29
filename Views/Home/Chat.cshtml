@@ -1,0 +1,63 @@
+@using FindARoomate.Areas.Identity.Pages.Account
+@model Conversation
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@* @model FindARoomate.Areas.Identity.Pages.Account.Conversation *@
+@{
+    Layout = null;
+     var currentUserId = UserManager.GetUserId(User);
+}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - FindARoomate</title>
+        <script type="importmap"></script>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/FindARoomate.styles.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="card p-0" style="width: 70%;">
+                <div class="card-header text-end bg-dark text-white p-4">
+                   @ViewBag.TargetUserName
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col overflow-y-auto" style="height:40rem ;">
+                            @foreach(var m in Model.messages)
+                            {
+                                @if(m.SenderId == currentUserId){
+                                    <div class="row justify-content-end">
+                                        <p class="bg-info rounded p-3 text-white" style="width: 17rem;">@m.Text</p>
+                                    </div>
+                                }else{
+                                    <div class="row justify-content-start">
+                                        <p class="bg-secondary rounded p-3 text-white" style="width: 17rem;">@m.Text</p>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="row align-items-end" style="border-top: solid grey;">
+                        <form asp-action="SendMessage" method="post" class="p-0">
+                            <input type="hidden" name="conversationId" value="@Model.Id" />
+                             <div class="row g-1">
+                                <div class="col d-inline-flex align-items-end">
+                                    <input type="text" class="form-control w-100 p-2" name="text" placeholder="Type a message">
+                                </div>
+                                <div class="col-md-3 d-inline-flex align-items-end">
+                                    <button type="submit" class="btn btn-dark mt-2 w-100 p-2">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        </div>   
+    </body>
+</html>

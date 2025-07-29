@@ -1,0 +1,189 @@
+@model IEnumerable<Post>
+@using FindARoomate.Areas.Identity.Pages.Account;
+@{
+  var postlength = Model.FirstOrDefault();
+  var userN = User.Identity.Name;
+
+ }
+<div class="row mt-5">
+  <div class="col">
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-6">
+         <div class="row justify-content-between align-items-center">
+          <div class="col-md-1">
+            <div class="dropdown">
+            <a
+              class="btn"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              >
+              <i class="bi bi-three-dots-vertical"></i>
+            </a>
+              <ul class="dropdown-menu">
+                <li><a asp-controller="User" asp-action="Logout" class="dropdown-item">تسجيل خروج</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+              <div class="row">
+                <div class="col text-end">
+                  <h4>@userN</h4>
+                </div>
+                <div class="col-md-2">
+                  <img
+                    src="https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=2048x2048&w=is&k=20&c=b_jPJtKaMniqqQD9cN60Ye3WRjfNFnrjtWND3x7k2IQ="
+                    class="rounded-circle"
+                    width="50"
+                    alt=""
+                    />
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-6 border-bottom my-3">
+        <div class="row justify-content-between">
+      <div class="col-md-3 text-end">
+        <button
+          class="btn btn-outline-dark"
+          data-bs-toggle="modal"
+          data-bs-target="#PostModal"
+        >
+          إنشاء منشور
+        </button>
+        <div
+          class="modal fade"
+          id="PostModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form asp-controller="User" asp-action="Add_Post" method="post" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col">
+                      <textarea
+                        name="Content"
+                        class="form-control"
+                        rows="3"
+                        placeholder="write something..."
+                        style="border: none"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-md-4">
+                      <!--<button class="btn" onclick="document.getElementById('fileInput').click((e) => {e.preventDefault()})"><i class="bi bi-image text-secondary fs-3"></i></button>-->
+                      <input name="Images" type="file" class="form-control" multiple accept="image/*" onchange="addImgFile(this)"/>
+                    </div>
+                    <div id="imagePreviewContainer" class="col text-start">
+                      <p id="imgPerview">no image added</p>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-md-3">
+                      <button
+                        type="submit"
+                        class="btn btn-outline-primary w-100"
+                      >
+                        ارسال
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <a class="btn" asp-controller="User" asp-action="MyConversations"><i class="bi bi-chat-right fs-3"></i></i></a>
+      </div>
+      </div>
+      </div>
+    </div>
+
+
+@if(postlength != null){
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        @foreach(var item in Model)
+        {
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-1">
+                <div class="dropdown">
+                    <a
+                    class="btn"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >
+                    <i class="bi bi-three-dots-vertical"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a asp-controller="User" asp-route-id="@item.Id" asp-action="Delete_Post" onclick="return confirm('هل انت متاكد من الحذف')" class="dropdown-item">حذف</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col text-end">
+                        <h4>@item.UserName</h4>
+                    </div>
+                    <div class="col-md-2">
+                        <img
+                        src="https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=2048x2048&w=is&k=20&c=b_jPJtKaMniqqQD9cN60Ye3WRjfNFnrjtWND3x7k2IQ="
+                        class="rounded-circle"
+                        width="50"
+                        alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <p class="fs-4" style="white-space: pre-wrap;">@item.Content</p>
+            </div>
+            <div class="row">
+              @foreach(var img in @item.Images){
+              <img
+                src="@img.ImagePath"
+                width="100"
+                />
+              }
+            </div>
+        </div>
+        <hr class="my-4">
+        }
+    </div>
+</div>
+}else
+{
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <i
+        class="bi bi-plus-square-dotted text-secondary"
+        style="font-size: 10rem"
+      ></i>
+      <p class="fw-bolder fs-2 text-secondary">لايوجد اي منشور</p>
+    </div>
+</div>
+}
+</div>
+</div>

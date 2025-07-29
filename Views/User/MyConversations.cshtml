@@ -1,0 +1,49 @@
+@model List<FindARoomate.Areas.Identity.Pages.Account.Conversation>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+    Layout = null;
+    var currentUserId = UserManager.GetUserId(User);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - FindARoomate</title>
+        <script type="importmap"></script>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/FindARoomate.styles.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+   <div class="container"> 
+    <div class="row mt-5 justify-content-center">
+        <div class="col-md-6">
+            @foreach(var conv in Model)
+            {
+                var targetUser = conv.User1Id == currentUserId
+                ? conv.User2
+                : conv.User1;
+                <a class="btn d-block" asp-controller="User" asp-action="ChatU" asp-route-id="@conv.Id">
+                    <div class="row">
+                        <div class="col text-end">
+                            <p>@targetUser.UserName</p>
+                        </div>
+                        <div class="col-md-2">
+                            <img 
+                            src="https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=2048x2048&w=is&k=20&c=b_jPJtKaMniqqQD9cN60Ye3WRjfNFnrjtWND3x7k2IQ=" 
+                            class="rounded-circle"
+                            width="50"
+                        >
+                    </div>
+                    <hr>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+   </div>
+</body>
+</html>
