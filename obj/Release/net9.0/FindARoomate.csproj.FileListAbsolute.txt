@@ -265,6 +265,7 @@
 /Users/hudamadkh/Desktop/FindARoomate/obj/Release/net9.0/FindARoomate.MvcApplicationPartsAssemblyInfo.cache
 /Users/hudamadkh/Desktop/FindARoomate/obj/Release/net9.0/FindARoomate.RazorAssemblyInfo.cache
 /Users/hudamadkh/Desktop/FindARoomate/obj/Release/net9.0/FindARoomate.RazorAssemblyInfo.cs
+/Users/hudamadkh/Desktop/FindARoomate/obj/Release/net9.0/FindARoomate.sourcelink.json
 /Users/hudamadkh/Desktop/FindARoomate/obj/Release/net9.0/rjimswa.dswa.cache.json
 /Users/hudamadkh/Desktop/FindARoomate/obj/Release/net9.0/rjsmrazor.dswa.cache.json
 /Users/hudamadkh/Desktop/FindARoomate/obj/Release/net9.0/rjsmcshtml.dswa.cache.json

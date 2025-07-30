@@ -265,6 +265,7 @@
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.MvcApplicationPartsAssemblyInfo.cache
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.RazorAssemblyInfo.cache
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.RazorAssemblyInfo.cs
+/Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.sourcelink.json
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/rjimswa.dswa.cache.json
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json
@@ -408,3 +409,9 @@
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.pdb
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.genruntimeconfig.cache
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/ref/FindARoomate.dll
+/Users/hudamadkh/Desktop/FindARoomate/bin/Debug/net9.0/publish/web.config
+/Users/hudamadkh/Desktop/FindARoomate/bin/Debug/net9.0/publish/appsettings.Development.json
+/Users/hudamadkh/Desktop/FindARoomate/bin/Debug/net9.0/publish/appsettings.json
+/Users/hudamadkh/Desktop/FindARoomate/bin/Debug/net9.0/publish/FindARoomate.deps.json
+/Users/hudamadkh/Desktop/FindARoomate/bin/Debug/net9.0/publish/FindARoomate.runtimeconfig.json
+/Users/hudamadkh/Desktop/FindARoomate/bin/Debug/net9.0/publish/FindARoomate.staticwebassets.endpoints.json

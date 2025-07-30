@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FindARoomate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4df2027868c69ca54382fb0af0de39bf76090428")]
 [assembly: System.Reflection.AssemblyProductAttribute("FindARoomate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FindARoomate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
