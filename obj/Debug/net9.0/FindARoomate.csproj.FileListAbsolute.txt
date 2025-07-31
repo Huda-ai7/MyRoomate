@@ -408,3 +408,4 @@
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.pdb
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.genruntimeconfig.cache
 /Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/ref/FindARoomate.dll
+/Users/hudamadkh/Desktop/FindARoomate/obj/Debug/net9.0/FindARoomate.sourcelink.json
