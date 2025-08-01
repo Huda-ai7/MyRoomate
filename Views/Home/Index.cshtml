@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Post>
 @{
+    var postlength = Model.FirstOrDefault();
     ViewData["Title"] = "Home Page";
 }
 
@@ -18,7 +19,7 @@
         <p class="text-end fs-4 lead">انضم إلى مجتمعنا اليوم واكتشف تجربة شريك السكن القادمة الرائعة؟ <span><a href="/Identity/Account/Login" class="fw-bolder">مستعد للبدء</a></span></p>
         </div>
     </div>
-
+    @if(postlength != null){
         @foreach(var p in Model)
         {
             <div class="row my-3 justify-content-center">
@@ -63,5 +64,6 @@
                     </div>
                 </div>
             </div>
+        }
         }
 </div>

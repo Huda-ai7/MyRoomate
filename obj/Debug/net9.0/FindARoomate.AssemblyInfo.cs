@@ -10,11 +10,10 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FindARoomate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0d2f0c7dc11a30c728bafe3fabb9e80ca84ec6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52bef8cc0ba8bef68d2bde3f865e18ca10fddbcd")]
 [assembly: System.Reflection.AssemblyProductAttribute("FindARoomate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FindARoomate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
